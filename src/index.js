@@ -1,12 +1,47 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import "./main.css";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class Intro extends React.Component {
+
+    render(){
+        return (
+            <div id="wrapper" className="fade-in">
+                <div id="intro">
+                    <h1>
+                        This is<br />
+                        Don't Forget It
+                    </h1>
+                    <p>By Mohole students</p>
+                </div>
+            </div>
+        );
+    }
+    
+}
+
+function Nav(){
+    return(
+        <nav id="nav">
+            <ul className="links">
+                <li className="active"><a href="archive">Archive</a></li>
+                <li><a href="calendar">Calendar</a></li>
+                <li><a href="settings">Settings</a></li>
+            </ul>
+        </nav>
+    );
+}
+
+
+function App() {
+    return (
+        <>
+            <Intro />
+            <Nav />
+        </>
+    );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
