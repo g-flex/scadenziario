@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import App from "./App";
 import "./main.css";
 
 class Intro extends React.Component {
@@ -34,14 +34,16 @@ function Nav(){
 }
 
 
-function App() {
-    return (
-        <>
-            <Intro />
-            <Nav />
-        </>
-    );
-}
+// function App() {
+//     return (
+//         <>
+//             <Intro />
+//             <Nav />
+//         </>
+//     );
+// }
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
+
+

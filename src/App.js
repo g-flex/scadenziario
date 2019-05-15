@@ -8,63 +8,51 @@ function App() {
         <Header />
 
         <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/topics" component={Topics} />
+        <Route path="/archive" component={Archive} />
+        <Route path="/calendar" component={Calendar} />
+        <Route path="/settings" component={Settings} />
+        <Footer />
       </div>
     </Router>
   );
 }
-
 function Home() {
   return <h2>Home</h2>;
 }
-
-function About() {
-  return <h2>About</h2>;
+function Archive() {
+  return <h2>Archive</h2>;
 }
 
-function Topic({ match }) {
-  return <h3>Requested Param: {match.params.id}</h3>;
+function Calendar() {
+  return <h2>Calendar</h2>;
 }
 
-function Topics({ match }) {
-  return (
-    <div>
-      <h2>Topics</h2>
-
-      <ul>
-        <li>
-          <Link to={`${match.url}/components`}>Components</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
-        </li>
-      </ul>
-
-      <Route path={`${match.path}/:id`} component={Topic} />
-      <Route
-        exact
-        path={match.path}
-        render={() => <h3>Please select a topic.</h3>}
-      />
-    </div>
-  );
+function Settings() {
+  return <h2>Settings</h2>;
 }
+
 
 function Header() {
   return (
     <ul>
+    <li>
+      <Link to="/">Home</Link>
+    </li>
       <li>
-        <Link to="/">Archivio</Link>
+        <Link to="/archive">Archive</Link>
       </li>
       <li>
-        <Link to="/about">Calendario</Link>
+        <Link to="/calendar">Calendar</Link>
       </li>
       <li>
-        <Link to="/topics">Impostazioni</Link>
+        <Link to="/settings">Settings</Link>
       </li>
     </ul>
   );
+}
+
+function Footer() {
+  return <h4><small>Copyright Mohole 2019©</small></h4>;
 }
 
 export default App;
