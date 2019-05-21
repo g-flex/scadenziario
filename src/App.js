@@ -5,12 +5,13 @@ function App() {
   return (
     <Router>
       <div>
+        <Intro />
         <Header />
 
         <Route exact path="/" component={Home} />
-        <Route path="/archive" component={Archive} />
-        <Route path="/calendar" component={Calendar} />
-        <Route path="/settings" component={Settings} />
+        <Route exact path="/archive" component={Archive} />
+        <Route exact path="/calendar" component={Calendar} />
+        <Route exact path="/settings" component={Settings} />
         <Footer />
       </div>
     </Router>
@@ -31,6 +32,23 @@ function Settings() {
   return <h2>Settings</h2>;
 }
 
+class Intro extends React.Component {
+
+  render(){
+      return (
+          <div id="wrapper" className="fade-in">
+              <div id="intro">
+                  <h1>
+                      This is<br />
+                      Don't Forget It
+                  </h1>
+                  <p>By Mohole students</p>
+              </div>
+          </div>
+      );
+  }
+  
+}
 
 function Header() {
   return (
