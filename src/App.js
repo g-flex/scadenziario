@@ -9,7 +9,7 @@ function App() {
         <Header />
 
         <Route exact path="/" component={Home} />
-        <Route exact path="/archive/" component={Archive} />
+        <Route exact path="/archive" component={Archive} />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/settings" component={Settings} />
         <Footer />
@@ -20,15 +20,21 @@ function App() {
 function Home() {
   return <h2>Home</h2>;
 }
-function Archive() {
-  return <h2>Archive</h2>;
+function Archive({ match }) {
+  return (
+  <Route
+        exact
+        path={match.path}
+        render={() => <h3>Archive.</h3>}
+      />
+  );
 }
 
-function Calendar() {
+function Calendar({ match }) {
   return <h2>Calendar</h2>;
 }
 
-function Settings() {
+function Settings({ match }) {
   return <h2>Settings</h2>;
 }
 
