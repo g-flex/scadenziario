@@ -9,7 +9,7 @@ function App() {
         <Header />
 
         <Route exact path="/" component={Home} />
-        <Route exact path="/archive" component={Archive} />
+        <Route exact path="/archive/" component={Archive} />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/settings" component={Settings} />
         <Footer />
