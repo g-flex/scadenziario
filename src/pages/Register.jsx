@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../img/brain_logo";
+import logo from "../img/brain_logo.png";
 class Register extends React.Component {
   render() {
     return(
