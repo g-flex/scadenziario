@@ -22,7 +22,7 @@ class Login extends React.Component {
                 </div>
                 <button type="submit" class="btn btn-primary">Log in</button>
                 <div><small>or</small></div>
-                <div><button class="btn btn-primary"><a href="create_account.html">Create account</a></button></div>
+                <div><button class="btn btn-primary"><a Link to="create_account.html">Create account</a></button></div>
               </form>
             </div>
           </div>
