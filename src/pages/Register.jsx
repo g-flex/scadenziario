@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "./img/brain_logo.png";
 class Register extends React.Component {
   render() {
     return(
@@ -6,7 +7,7 @@ class Register extends React.Component {
         <div class="container">
         <div class="row">
            <div class="col">
-               <img src="" alt="logo" />
+            
            </div>
         </div>
         <div class="row">
