@@ -9,34 +9,29 @@ function App() {
       <div>
         <Intro />
         <Header />
-
         <Route exact path="/" component={Home} />
         <Route exact path="/archive" component={Archive} />
         <Route exact path="/calendar" component={Calendar} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/settings" component={Settings} />
         <Footer />
       </div>
     </Router>
   );
 }
+
 function Home() {
   return <h2>Home</h2>;
 }
-function Archive({ match }) {
-  return (
-  <Route
-        exact
-        path={match.path}
-        render={() => <h3>Archive.</h3>}
-      />
-  );
+function Archive() {
+  return <h2>Archive</h2>;
 }
 
-function Calendar({ match }) {
+function Calendar() {
   return <h2>Calendar</h2>;
 }
 
-function Settings({ match }) {
+function Settings() {
   return <h2>Settings</h2>;
 }
 
@@ -69,6 +64,9 @@ function Header() {
       </li>
       <li>
         <Link to="/calendar">Calendar</Link>
+      </li>
+      <li>
+        <Link to="/login">Login</Link>
       </li>
       <li>
         <Link to="/settings">Settings</Link>
