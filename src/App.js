@@ -1,6 +1,6 @@
 import React from "react";
 import Login from "./pages/Login";
-import Register from "./pages/Register"
+import Register from "./pages/Register";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
         <Route exact path="/archive" component={Archive} />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
         <Route exact path="/settings" component={Settings} />
         <Footer />
       </div>
