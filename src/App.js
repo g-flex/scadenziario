@@ -8,7 +8,7 @@ function App() {
     <Router>
       <div>
         <Intro />
-        <Header />
+        <Nav />
         <Route exact path="/" component={Home} />
         <Route exact path="/archive" component={Archive} />
         <Route exact path="/calendar" component={Calendar} />
@@ -54,7 +54,7 @@ class Intro extends React.Component {
   
 }
 
-function Header() {
+function Nav() {
   return (
     <ul>
     <li>
