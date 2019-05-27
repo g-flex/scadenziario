@@ -1,4 +1,6 @@
 import React from "react";
+import Login from "./pages/Login";
+import Registrati from "./pages/Registrati"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
