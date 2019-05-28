@@ -3,6 +3,20 @@ import logo from "../img/brain_logo.png";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 class Login extends React.Component {
+  constructor() {
+		super();
+		this.clickSubmit = this.clickSubmit.bind(this);
+	}
+clickSubmit(event){
+    event.preventDefault();
+    if(!document.querySelector("input[type='email']").value || !document.querySelector("input[type='password']").value){
+      alert('Please fill in Username and Password fields');
+    } else {
+      alert('all filled');
+    }
+
+}
+
   render() {
     return(
       <>
@@ -14,7 +28,7 @@ class Login extends React.Component {
           <div className="row">
             <div className="col-12"><h1>Log in</h1></div>
             <div className="col-12">
-              <form>
+              <form onSubmit={this.clickSubmit}>
                 <div className="form-group d-flex justify-content-center">
                   <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                 </div>
