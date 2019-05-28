@@ -4,10 +4,9 @@ class Register extends React.Component {
   render() {
     return(
       <>
-        <div className="container">
         <div className="row">
            <div className="col">
-            <img src={logo} height='100' />
+            <img src={logo} height='100' alt="logo" />
            </div>
         </div>
         <div className="row">
@@ -33,7 +32,6 @@ class Register extends React.Component {
              </form>
             </div>
         </div>
-    </div>
       </>
     );
   }
