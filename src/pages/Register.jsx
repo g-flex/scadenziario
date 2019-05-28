@@ -15,10 +15,7 @@ class Register extends React.Component {
            <div className="col-12">
             <form>
               <div className="form-group d-flex justify-content-center">
-                <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" />
-              </div>
-              <div className="form-group d-flex justify-content-center">
-                <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Surname" />
+                <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" />
               </div>
               <div className="form-group d-flex justify-content-center">
                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" />
