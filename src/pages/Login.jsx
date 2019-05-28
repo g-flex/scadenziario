@@ -6,7 +6,25 @@ class Login extends React.Component {
   constructor() {
 		super();
 		this.clickSubmit = this.clickSubmit.bind(this);
-	}
+  }
+  
+noAuthPost(url, data, callback) {
+	
+	const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
+	fetch(url, {
+		method: 'POST',
+		body: formBody,
+		headers: {
+			"Content-type": "application/x-www-form-urlencoded;charset=UTF-8"
+		}
+	})
+	.then(response => response.json())
+	.then((response) => {
+		callback(response);
+	});
+  //.catch(error=> console.error('Error:', error));
+}
+
 clickSubmit(event){
     event.preventDefault();
     if(!document.querySelector("input[type='email']").value || !document.querySelector("input[type='password']").value){
