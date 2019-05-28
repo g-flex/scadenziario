@@ -8,7 +8,7 @@ class Profile extends React.Component {
           <div className="container">
           <div className="row">
            <div className="col">
-               <img src={logo} />
+               <img src={logo} height="100" alt="" />
            </div>
         </div>
         <div className="row profile">
