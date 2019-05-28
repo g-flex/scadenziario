@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../img/brain_logo.png";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 class Login extends React.Component {
@@ -8,7 +9,7 @@ class Login extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col">
-              <img src="" alt="logo" />
+            <img src={logo} height='100' />
             </div>
           </div>
           <div className="row">

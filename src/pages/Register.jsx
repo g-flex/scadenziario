@@ -7,7 +7,7 @@ class Register extends React.Component {
         <div className="container">
         <div className="row">
            <div className="col">
-            <img src={logo} height='200' />
+            <img src={logo} height='100' />
            </div>
         </div>
         <div className="row">
