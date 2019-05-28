@@ -31,7 +31,7 @@ class Profile extends React.Component {
                <label>Change your password</label>
                 <input type="password" className="form-control" id="password" placeholder="Password" />
               </div>
-              <div><Button type="submit" className="btn btn-primary">Done</Button></div>
+              <div><button type="submit" className="btn btn-primary">Done</button></div>
              </form>
             </div>
         </div>

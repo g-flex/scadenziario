@@ -15,9 +15,9 @@ class Category extends React.Component {
         
         <h1>NEW DEADLINE</h1>
 
-        <Button className="btn btn-category">
+        <button className="btn btn-category">
             <h3>CHOSE <br/> YOUR <br/> CATEGORY</h3>
-        </Button>
+        </button>
         <div className="category">
         <Link to="/"><p>HOME</p></Link>
         <hr/>
