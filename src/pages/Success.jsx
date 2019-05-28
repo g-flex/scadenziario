@@ -10,7 +10,7 @@ class Success extends React.Component {
           <div className="container bcg">
 
           <div className="circle">
-          <img src={tick} className="tick"/>
+          <img src={tick} className="tick" alt="" />
              </div>
 
             <p>La tua scadenza è stata salvata</p>

@@ -9,7 +9,7 @@ class Archive extends React.Component {
           <div className="container archive">
           <div className="row">
            <div className="col">
-           <img src={logo} />
+           <img src={logo} height="100" alt="" />
            </div>
         </div>
         <div className="row">
