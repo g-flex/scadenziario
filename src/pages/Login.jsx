@@ -1,11 +1,15 @@
 import React from "react";
 import logo from "../img/brain_logo.png";
+import { Redirect } from 'react-router-dom';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 class Login extends React.Component {
+  state = {
+    redirect: false
+  }
   constructor() {
 		super();
-		this.clickSubmit = this.clickSubmit.bind(this);
+    this.clickSubmit = this.clickSubmit.bind(this);
   }
   
   getAuthPost(email, password, callback) {
@@ -38,39 +42,53 @@ clickSubmit(event){
     } else {
       //alert('all filled');
       this.getAuthPost(email, password, (response)=>{
-        console.log('resp: ', response);
+        //console.log('resp: ', response);
+        //let authToken = response.jwt;
+        //let username = response.user.username;
+        this.setState({ 
+          redirect: true,
+          username: response.user.username,
+          //authToken: response.jwt
+         });
+        
       });
     }
 
 }
 
   render() {
-    return(
-      <>
-          <div className="row">
-            <div className="col">
-            <img src={logo} height='100' alt="logo" />
+    const { redirect, username } = this.state;
+
+     if (redirect) {
+       return <Redirect to={`/welcome/${username}`} />;
+     } else {
+      return(
+        <>
+            <div className="row">
+              <div className="col">
+              <img src={logo} height='100' alt="logo" />
+              </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-12"><h1>Log in</h1></div>
-            <div className="col-12">
-              <form onSubmit={this.clickSubmit}>
-                <div className="form-group d-flex justify-content-center">
-                  <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                </div>
-                <div className="form-group d-flex justify-content-center">
-                  <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-                </div>
-                <button type="submit" className="btn btn-primary">Log in</button>
-                <div><small>or</small></div>
-                
-              </form>
-              <div><button className="btn btn-primary"><Link to="/register">Create account</Link></button></div>
+            <div className="row">
+              <div className="col-12"><h1>Log in</h1></div>
+              <div className="col-12">
+                <form onSubmit={this.clickSubmit}>
+                  <div className="form-group d-flex justify-content-center">
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                  </div>
+                  <div className="form-group d-flex justify-content-center">
+                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                  </div>
+                  <button type="submit" className="btn btn-primary">Log in</button>
+                  <div><small>or</small></div>
+                  
+                </form>
+                <div><button className="btn btn-primary"><Link to="/register">Create account</Link></button></div>
+              </div>
             </div>
-          </div>
-      </>
-    );
+        </>
+      );
+     }
   }
 }
 export default Login;
