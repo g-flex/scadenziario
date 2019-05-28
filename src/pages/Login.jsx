@@ -8,29 +8,38 @@ class Login extends React.Component {
 		this.clickSubmit = this.clickSubmit.bind(this);
   }
   
-noAuthPost(url, data, callback) {
-	
-	const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
-	fetch(url, {
-		method: 'POST',
-		body: formBody,
-		headers: {
-			"Content-type": "application/x-www-form-urlencoded;charset=UTF-8"
-		}
-	})
-	.then(response => response.json())
-	.then((response) => {
-		callback(response);
-	});
-  //.catch(error=> console.error('Error:', error));
-}
+  getAuthPost(email, password, callback) {
+    let data = {
+      identifier: email,
+      password: password
+    };
+    
+    const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
+    fetch('http://127.0.0.1:1337/auth/local', {
+      method: 'POST',
+      body: formBody,
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded;charset=UTF-8"
+      }
+    })
+    .then(response => response.json())
+    .then((response) => {
+      callback(response);
+    });
+    //.catch(error=> console.error('Error:', error));
+  }
 
 clickSubmit(event){
     event.preventDefault();
-    if(!document.querySelector("input[type='email']").value || !document.querySelector("input[type='password']").value){
+    let email = document.querySelector("input[type='email']").value;
+    let password = document.querySelector("input[type='password']").value;
+    if(!email || !password){
       alert('Please fill in Username and Password fields');
     } else {
-      alert('all filled');
+      //alert('all filled');
+      this.getAuthPost(email, password, (response)=>{
+        console.log('resp: ', response);
+      });
     }
 
 }
