@@ -19,7 +19,7 @@ class Login extends React.Component {
     };
     
     const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
-    fetch('http://127.0.0.1:1337/auth/local', {
+    fetch('http://node.mohole.it:1339/auth/local', {
       method: 'POST',
       body: formBody,
       headers: {
