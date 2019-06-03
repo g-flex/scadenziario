@@ -48,12 +48,11 @@ clickSubmit(event){
         this.setState({ 
           redirect: true,
           username: response.user.username,
-          //authToken: response.jwt
+          authToken: response.jwt
          });
         
       });
     }
-
 }
 
   render() {
