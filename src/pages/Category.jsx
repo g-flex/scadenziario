@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import back from "../img/back.png";
-import cancel from "../img/cancel.png";
 
 class Category extends React.Component {
     render() {
@@ -10,7 +9,6 @@ class Category extends React.Component {
           <div className="container">
           <div className="control">
             <Link to="/"><img src={back} /> </Link>
-            <Link to="/"><img src={cancel} /> </Link>
         </div>
         
         <h1>NEW DEADLINE</h1>

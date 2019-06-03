@@ -9,6 +9,9 @@ import Deadline from "./pages/Deadline";
 import Success from "./pages/Success";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
+import Subcategory_person from "./pages/Subcategory_person";
+import Subcategory_other from "./pages/Subcategory_other";
+import Subcategory_home from "./pages/Subcategory_home";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
         <Route exact path="/deadline" component={Deadline} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/subcategory" component={Subcategory} />
+        <Route exact path="/subcategory_person" component={Subcategory_person} />
+        <Route exact path="/subcategory_other" component={Subcategory_other} />
+        <Route exact path="/subcategory_home" component={Subcategory_home} />
     </Router>
   );
 }

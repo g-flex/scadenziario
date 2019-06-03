@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import back from "../img/back.png";
-import cancel from "../img/cancel.png";
 
 class Deadline extends React.Component {
     render() {
@@ -11,10 +10,15 @@ class Deadline extends React.Component {
 
           <div className="control">
             <Link to="/"><img src={back} /></Link>
-            <Link to="/"><img src={cancel} /></Link>
         </div>
         
         <h1>NEW DEADLINE</h1>
+
+        <div class="index">
+        <h6>Category</h6>
+        <hr/>
+        <h3>HOME</h3>
+    </div>
 
         
 
