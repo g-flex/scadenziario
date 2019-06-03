@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 class Test extends React.Component {
 	
   render() {
-	const { username } = this.props.match.params;
+  const { username } = this.props.match.params;
+  console.log(this.props);
     return(
       <>
         <div className="container">
