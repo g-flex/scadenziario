@@ -24,8 +24,8 @@ class Subcategory_person extends React.Component {
     </div>
 
 
-        
-        <button className="btn btn-date">
+        <section>
+        <button className="btn btn-category">
         <h3>CHOOSE <br/> THE <br/> SUBCATEGORY</h3>
         </button>
         <div className="subcategory">
@@ -34,15 +34,18 @@ class Subcategory_person extends React.Component {
                 <Link to="/">Passport/Cat</Link>
                 
             </div>
+            </section>
         
 
-    <button className="btn btn-category">
+        <section>
+    <button className="btn btn-date">
     <h3>ISSUING / <br/> LAST VACINATION</h3>
         </button>
         <div class="date">
                 <input type="date" class="ml-5" />
                 <hr/>     
         </div>
+        </section>
         
 <Link to="/"><button className="btn"><h3 className="create">CREATE</h3></button></Link>
         

@@ -26,21 +26,11 @@ class Deadline extends React.Component {
             <h3>CHOSE <br/> YOUR <br/> SUBCATEGORY</h3>
         </button>
         <div className="subcategory">
-        <Link to="/">HOME</Link>
+        <Link to="/">BOILER</Link>
         <hr/>
-        <Link to="/">ANIMALS</Link>
+        <Link to="/">BILLS</Link>
     </div>
 
-    <button className="btn btn-date">
-            <h3>LAST <br/> CHECK</h3>
-        </button>
-        <div className="date">
-        <input type="date" className="ml-5" />
-        <hr/>
-
-    <Link to="/"><button className="btn"><h3 className="create">CREATE</h3></button></Link>    
-        
-</div>
           </div>
         </>
       );

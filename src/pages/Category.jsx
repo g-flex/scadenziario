@@ -16,7 +16,7 @@ class Category extends React.Component {
         <button className="btn btn-category">
             <h3>CHOSE <br/> YOUR <br/> CATEGORY</h3>
         </button>
-        <div className="category">
+        <div className="subcategory">
         <Link to="/"><p>HOME</p></Link>
         <hr/>
         <Link to="/"><p>ANIMALS</p></Link>

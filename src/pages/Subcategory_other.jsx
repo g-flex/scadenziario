@@ -24,7 +24,7 @@ class Subcategory_other extends React.Component {
     </div>
 
 
-        
+        <section>
         <button className="btn btn-date">
             <h3>DEADLINE</h3>
         </button>
@@ -32,18 +32,20 @@ class Subcategory_other extends React.Component {
                 <input type="date" className="ml-5" />
                 <hr />     
         </div>
+        </section>
         
-
+        <section>
     <button className="btn btn-category">
             <h3>CHOOSE <br/> THE <br/> TIME</h3>
         </button>
         <div className="subcategory mb-5">
-                <Link to="/">3 MONTHS</Link>
+                <p>3 MONTHS</p>
                 <hr/>
-                <Link to="/">6 MONTHS</Link>
+                <p>6 MONTHS</p>
                 <hr/>
-                <Link to="/">1 YEAR</Link>
+                <p>1 YEAR</p>
             </div>
+            </section>
         
 <Link to="/"><button className="btn"><h3 className="create">CREATE</h3></button></Link>
         

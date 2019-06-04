@@ -40,6 +40,29 @@ input.form-control {
     color: white;
     text-decoration: none;
 }
+
+.btn a:hover {
+    text-decoration: none;
+}
+
+.btn-category, .btn-date {
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+
+}
+
+.create {
+    color: white;
+    font-size: 20px;
+    padding: 0 35px 0 35px;
+}
+
+.btn-category h3, .btn-date h3  {
+    color: white;
+    font-size: 23px;
+}
+
 .settings {
     margin: 0 auto;
     margin-top: 85px;
@@ -143,38 +166,59 @@ input.form-control {
 }
 
 
-.subcategory {
+.list {
     flex-wrap: nowrap;
 }
-.subcategory .col-1 {
+.list .col-1 {
     height: 100vh;
     display: flex;
     align-items: center;
     background-color: #000;
     padding: 23px;
 }
-.subcategory .col-1 h1 {
+.list .col-1 h1 {
     transform: rotate(-90deg);
     padding: 0;
     position: absolute;
     left: -85%;
 }
-.subcategory .col-11 {
+.list .col-11 {
     padding: 0;
 }
-.subcategory .col-11 h3:nth-last-child(odd) {
+.list .col-11 h3:nth-last-child(odd) {
     background-color: #661254;
     padding: 30px 0;
     color: #fff;
     margin: 0;
 }
-.subcategory .col-11 h3:nth-last-child(even) {
+.list .col-11 h3:nth-last-child(even) {
     background-color: #8D286E;
     padding: 30px 0;
     color: #fff;
     margin: 0;
 }
 
+
+
+.index {
+    width: 200px;
+    margin: 0 auto;
+}
+.index > h6 {
+    text-align: left;
+    font-size: 16px;
+    color: #8C2771;
+    margin-bottom: -11px;
+}
+.index > hr {
+    width: 200px !important;
+    border-top: 1px solid #8C2771;
+}
+
+.index > h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
 
 
 .agg-scad {
@@ -217,10 +261,6 @@ input.form-control {
     height: auto;
 }
 
-.category {
-    display: none;
-}
-
 .category hr, .subcategory hr {
     border-top: 1px solid #8C2771;
     width: 130px;
@@ -251,4 +291,8 @@ input {
 }
 .tick {
     transform: scale(0.5);
+}
+
+a {
+    color: #000000;
 }

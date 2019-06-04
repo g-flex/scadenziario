@@ -1,6 +1,6 @@
 .container {
     text-align: center;
-    width: 350px;
+    width: 100%;
     padding: 30px 15px;
 }
 
@@ -40,6 +40,28 @@ input.form-control {
     color: white;
     text-decoration: none;
 }
+
+.btn a:hover {
+    text-decoration: none;
+}
+
+.btn-category, .btn-date {
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+
+}
+
+.create {
+    color: white;
+    font-size: 20px;
+    padding: 0 35px 0 35px;
+}
+
+.btn-category h3, .btn-date h3  {
+    color: white;
+}
+
 .settings {
     margin: 0 auto;
     margin-top: 85px;
@@ -176,6 +198,24 @@ input.form-control {
 }
 
 
+.index {
+    width: 200px;
+    margin: 0 auto;
+}
+.index > h6 {
+    text-align: left;
+    font-size: 16px;
+    color: #8C2771;
+    margin-bottom: -11px;
+}
+.index > hr {
+    width: 200px !important;
+}
+
+.index > h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
 
 .agg-scad {
     flex-wrap: nowrap;
@@ -202,4 +242,53 @@ input.form-control {
     width: 240px;
     height: 240px;
     border-radius: 50%;
+}
+
+
+/* CSS for category */
+
+.control {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 16px;
+    height: auto;
+}
+
+.category {
+    display: none;
+}
+
+.category hr, .subcategory hr {
+    border-top: 1px solid #8C2771;
+    width: 130px;
+}
+.date hr {
+    border-top: 1px solid #8C2771;
+    width: 160px;
+}
+input {
+    border: none;
+}
+.container.bcg {
+    background-color: #8C2771;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.circle{
+    border-radius: 100%;
+    background-color: white;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+.tick {
+    transform: scale(0.5);
 }
