@@ -7,7 +7,7 @@ class Subcategory extends React.Component {
       return(
         <>
           <div className="container">
-          <div class="row">
+          <div class="row mb-5">
            <div class="col">
              <img src={logo} height="100" alt="" />
            </div>
