@@ -23,9 +23,8 @@ class Category extends React.Component {
         <hr/>
         <Link to="/"><p>PEOPLE</p></Link>
         <hr/>
-        <Link to="/"><p>LOANS</p></Link>
-        <hr/>
-        <Link to="/"><p>SUBSCRIPTIONS</p></Link>
+        <Link to="/"><p>OTHER</p></Link>
+        
     </div>
           </div>
         </>
