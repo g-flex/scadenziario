@@ -3,12 +3,18 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import back from "../img/back.png";
 
 class Subcategory_home extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  changeView = (a,b='',c='') => {
+    this.props.changeView(a,b,c);
+  }
     render() {
       return(
         <>
           <div className="container">
           <div className="control">
-            <Link to="/"><img src={back} /> </Link>
+            <img src={back} onClick={()=>this.changeView('Deadline','HOME')} alt="back" />
         </div>
         
         <h1>NEW DEADLINE</h1>
@@ -20,7 +26,7 @@ class Subcategory_home extends React.Component {
 
         <h6>Subcategory</h6>
         <hr/>
-        <h3>BILLS</h3>
+        <h3>{this.props.subcategory}</h3>
     </div>
 
 

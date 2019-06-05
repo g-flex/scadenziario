@@ -3,12 +3,18 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import back from "../img/back.png";
 
 class Category extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  changeView = (a,b='',c='') => {
+    this.props.changeView(a,b,c);
+  }
     render() {
       return(
         <>
           <div className="container">
           <div className="control">
-            <Link to="/"><img src={back} /> </Link>
+          <img src={back} onClick={()=>this.changeView('')} alt="back" />
         </div>
         
         <h1>NEW DEADLINE</h1>
@@ -17,13 +23,13 @@ class Category extends React.Component {
             <h3>CHOSE <br/> YOUR <br/> CATEGORY</h3>
         </button>
         <div className="subcategory">
-        <Link to="/"><p>HOME</p></Link>
+        <p onClick={()=>this.changeView('Deadline', 'HOME')}>HOME</p>
         <hr/>
-        <Link to="/"><p>ANIMALS</p></Link>
+        <p onClick={()=>this.changeView('Deadline', 'ANIMALS')}>ANIMALS</p>
         <hr/>
-        <Link to="/"><p>PEOPLE</p></Link>
+        <p onClick={()=>this.changeView('Deadline', 'PEOPLE')}>PEOPLE</p>
         <hr/>
-        <Link to="/"><p>OTHER</p></Link>
+        <p onClick={()=>this.changeView('Deadline', 'OTHER')}>OTHER</p>
         
     </div>
           </div>

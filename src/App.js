@@ -1,6 +1,6 @@
 import React from "react";
 import Login from "./pages/Login";
-import Test from "./pages/Test";
+// import Test from "./pages/Test";
 import Register from "./pages/Register";
 import Category from "./pages/Category";
 import Subcategory from "./pages/Subcategory";
@@ -12,18 +12,20 @@ import Settings from "./pages/Settings";
 import Subcategory_person from "./pages/Subcategory_person";
 import Subcategory_other from "./pages/Subcategory_other";
 import Subcategory_home from "./pages/Subcategory_home";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Splashpage from "./pages/Splashpage";
+import Add_deadline from "./pages/Add_deadline";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <Router>
         {/* <Route exact path="/" component={() => <Test userId='instaB' />} /> */}
         <Route exact path="/archive" component={Archive} />
-        <Route exact path="/welcome/:username" component={Test} />
+        {/* <Route exact path="/welcome/:username" component={Test} /> */}
         <Route exact path="/" component={Login} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/add" component={Add_deadline} />
         <Route exact path="/settings" component={Settings} />
         <Route exact path="/category" component={Category} />
         <Route exact path="/success" component={Success} />
