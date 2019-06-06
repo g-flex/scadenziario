@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../img/brain_logo.png";
 import { Redirect } from 'react-router-dom';
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 class Register extends React.Component {state = {
   redirect: false
 }
@@ -95,7 +95,7 @@ clickSubmit(event){
                 <div><button type="submit" className="btn btn-primary">Create account</button></div>
                   <div><small>or</small></div>
               </form>
-              <div><button className="btn btn-primary"><Link to="/login">Login</Link></button></div>
+              <div><Link to="/login"><button className="btn btn-primary">Login</button></Link></div>
               </div>
           </div>
         </>

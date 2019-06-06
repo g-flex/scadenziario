@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../img/brain_logo.png";
 import { Redirect } from 'react-router-dom';
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 class Login extends React.Component {
   state = {
@@ -122,7 +122,7 @@ checkDeadlines(user_id, token, callback) {
                   <div><small>or</small></div>
                   
                 </form>
-                <div><button className="btn btn-primary"><Link to="/register">Create account</Link></button></div>
+                <div><Link to="/register"><button className="btn btn-primary">Create account</button></Link></div>
               </div>
             </div>
         </>
