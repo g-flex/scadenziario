@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import back from "../img/back.png";
 
 class Subcategory_home extends React.Component {
@@ -19,7 +18,7 @@ class Subcategory_home extends React.Component {
       alert('Please choose a period and a date.');
     } else{
       this.postDeadline(this.state.deadlineDate, this.state.period, (response)=>{
-        console.log('resp: ', response);
+        this.changeView('success');
       });
     }
   }

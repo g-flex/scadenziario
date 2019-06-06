@@ -1,16 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import back from "../img/back.png";
 
 class Deadline extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   changeView = (a,b='',c='') => {
     this.props.changeView(a,b,c);
   }
     render() {
-      if (this.props.selectedCategory=='HOME'){
+      if (this.props.selectedCategory==='HOME'){
         return(
           <>
             <div className="container">
@@ -39,7 +35,7 @@ class Deadline extends React.Component {
             </div>
           </>
         );
-      } else if (this.props.selectedCategory=='PEOPLE'){
+      } else if (this.props.selectedCategory==='PEOPLE'){
         return(
           <>
             <div className="container">
@@ -60,15 +56,15 @@ class Deadline extends React.Component {
               <h3>CHOSE <br/> YOUR <br/> SUBCATEGORY</h3>
           </button>
           <div className="subcategory">
-            <p>ID CARD</p>
+            <p onClick={()=>this.changeView('subcategory_person', 'PEOPLE', 'ID CARD')}>ID CARD</p>
             <hr/>
-            <p>PASSPORT</p>
+            <p onClick={()=>this.changeView('subcategory_person', 'PEOPLE', 'PASSPORT')}>PASSPORT</p>
           </div>
 
             </div>
           </>
         );
-      } else if(this.props.selectedCategory=='ANIMALS'){
+      } else if(this.props.selectedCategory==='ANIMALS'){
         return(
           <>
             <div className="container">
@@ -89,15 +85,15 @@ class Deadline extends React.Component {
               <h3>CHOSE <br/> YOUR <br/> SUBCATEGORY</h3>
           </button>
           <div className="subcategory">
-            <p>DOG</p>
+            <p onClick={()=>this.changeView('subcategory_animal', 'ANIMALS', 'DOG')}>DOG</p>
             <hr/>
-            <p>CAT</p>
+            <p onClick={()=>this.changeView('subcategory_animal', 'ANIMALS', 'CAT')}>CAT</p>
           </div>
 
             </div>
           </>
         );
-      } else if(this.props.selectedCategory=='OTHER'){
+      } else if(this.props.selectedCategory==='OTHER'){
         return ('OTHER category');
       } else {
         return ('Error, please contact support');

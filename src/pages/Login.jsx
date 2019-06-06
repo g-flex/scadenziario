@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../img/brain_logo.png";
 import { Redirect } from 'react-router-dom';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 class Login extends React.Component {
   state = {
@@ -83,7 +83,7 @@ checkDeadlines(user_id, token, callback) {
   render() {
     const { redirect, authToken, userId } = this.state;
     
-     if (redirect == 'hasDeadlines') {
+     if (redirect === 'hasDeadlines') {
       // to={`/welcome/${username}`}
         return <Redirect to={{
           pathname: `/archive`,
@@ -92,7 +92,7 @@ checkDeadlines(user_id, token, callback) {
             token: `${authToken}`
          }
         }} />;
-     } else if (redirect == 'noDeadlines'){
+     } else if (redirect === 'noDeadlines'){
       return <Redirect to={{
         pathname: `/add`,
         state: { 

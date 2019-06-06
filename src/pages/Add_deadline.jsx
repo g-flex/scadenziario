@@ -1,9 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import plus from "../img/plus.png";
 import Category from "../pages/Category";
 import Deadline from "../pages/Deadline";
 import Subcategory_home from "../pages/Subcategory_home";
+import Subcategory_person from "../pages/Subcategory_person";
+import Success from "../pages/Success";
 
 
 
@@ -25,7 +26,7 @@ class Add_deadline extends React.Component {
     }
     
     render() {
-      if(!this.state.addPhase || this.state.addPhase==''){
+      if(!this.state.addPhase || this.state.addPhase===''){
         return(
           <>
             <div className="container bcg">
@@ -42,12 +43,18 @@ class Add_deadline extends React.Component {
             </div>
           </>
         );
-      } else if(this.state.addPhase == 'chooseCategory'){
+      } else if(this.state.addPhase === 'chooseCategory'){
         return <Category changeView={this.changeView} />;
-      } else if(this.state.addPhase == 'Deadline'){
+      } else if(this.state.addPhase === 'Deadline'){
         return <Deadline changeView={this.changeView} selectedCategory={this.state.selectedCategory} />;
-      } else if(this.state.addPhase == 'subcategory_home'){
+      } else if(this.state.addPhase === 'subcategory_home'){
         return <Subcategory_home changeView={this.changeView} subcategory={this.state.subcategory} />;
+      } else if(this.state.addPhase === 'subcategory_person'){
+        return <Subcategory_person changeView={this.changeView} subcategory={this.state.subcategory} category={this.state.selectedCategory} />;
+      } else if(this.state.addPhase === 'subcategory_animal'){
+        return <Subcategory_person changeView={this.changeView} subcategory={this.state.subcategory} category={this.state.selectedCategory} />;
+      } else if(this.state.addPhase === 'success'){
+        return <Success />;
       }
     }
   }

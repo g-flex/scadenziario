@@ -1,11 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import back from "../img/back.png";
 
 class Category extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   changeView = (a,b='',c='') => {
     this.props.changeView(a,b,c);
   }
