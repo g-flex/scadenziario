@@ -30,8 +30,8 @@ class Login extends React.Component {
     .then(response => response.json())
     .then((response) => {
       callback(response);
-    });
-    //.catch(error=> console.error('Error:', error));
+    })
+    .catch(()=> alert('Error: please retry.'));
   }
 
 clickSubmit(event){
@@ -52,7 +52,6 @@ clickSubmit(event){
         
          this.checkDeadlines(response.user.id, response.jwt, (resp)=>{
             //console.log('resp: ', resp);
-
             this.setState({
               redirect: resp[0]?'hasDeadlines':'noDeadlines',
               username: response.user.username,
@@ -76,12 +75,12 @@ checkDeadlines(user_id, token, callback) {
   .then(response => response.json())
   .then((response) => {
     callback(response);
-  });
-  //.catch(error=> console.error('Error:', error));
+  })
+  .catch(()=> alert('Error: please retry.'));
 }
 
   render() {
-    const { redirect, authToken, userId } = this.state;
+    const { redirect, authToken, userId, deadlines } = this.state;
     
      if (redirect === 'hasDeadlines') {
       // to={`/welcome/${username}`}
@@ -89,7 +88,8 @@ checkDeadlines(user_id, token, callback) {
           pathname: `/archive`,
           state: { 
             id: `${userId}`,
-            token: `${authToken}`
+            token: `${authToken}`,
+            deadlines: deadlines
          }
         }} />;
      } else if (redirect === 'noDeadlines'){
