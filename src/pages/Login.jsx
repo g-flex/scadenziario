@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../img/brain_logo.png";
+import Splashpage from "../pages/Splashpage";
 import { Redirect } from 'react-router-dom';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
@@ -102,7 +103,8 @@ checkDeadlines(user_id, token, callback) {
       }} />;
      } else {
       return(
-        <>
+        <>  
+            <Splashpage />
             <div className="row">
               <div className="col">
               <img src={logo} height='100' alt="logo" />

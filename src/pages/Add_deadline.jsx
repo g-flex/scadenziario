@@ -4,27 +4,12 @@ import Category from "../pages/Category";
 import Deadline from "../pages/Deadline";
 import Subcategory_home from "../pages/Subcategory_home";
 import Subcategory_person from "../pages/Subcategory_person";
+import Subcategory_other from "../pages/Subcategory_other";
 import Success from "../pages/Success";
+import Login from "../pages/Login";
+import { Redirect } from 'react-router-dom';
 
 
-class Add_deadline extends React.Component {
-    render() {
-      return(
-        <>
-          <div className="container bcg">
-
-          <div className="row agg-scad">
-           <div className="col-1"><h1>CALENDAR</h1></div>
-           <div className="col-11">
-           <div class="circle">
-           <img src={plus} className="tick"/>
-            </div>
-            </div>
-            </div>
-            </div>
-            </>
-            )}
-            }
 
 class Add_deadline extends React.Component {
     constructor(props) {
@@ -44,7 +29,9 @@ class Add_deadline extends React.Component {
     }
     
     render() {
-      if(!this.state.addPhase || this.state.addPhase===''){
+      if(!localStorage.getItem('authToken') || !localStorage.getItem('username') || !localStorage.getItem('userId')){
+        return <Redirect to={Login} />
+      } else if(!this.state.addPhase || this.state.addPhase===''){
         return(
           <>
             <div className="container bcg">
@@ -71,6 +58,8 @@ class Add_deadline extends React.Component {
         return <Subcategory_person changeView={this.changeView} subcategory={this.state.subcategory} category={this.state.selectedCategory} />;
       } else if(this.state.addPhase === 'subcategory_animal'){
         return <Subcategory_person changeView={this.changeView} subcategory={this.state.subcategory} category={this.state.selectedCategory} />;
+      } else if(this.state.addPhase === 'subcategory_other'){
+        return <Subcategory_other changeView={this.changeView} subcategory={this.state.subcategory} category={this.state.selectedCategory} />;
       } else if(this.state.addPhase === 'success'){
         return <Success />;
       }

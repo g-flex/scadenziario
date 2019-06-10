@@ -27,9 +27,6 @@ input.form-control {
     border: none;
     margin: 2rem 0 3rem;
 }
-.btn-1 {
-    background-color: rgb(179, 22, 22) !important;
-}
 .btn:hover {
     background-color: #8c2771;
     opacity: 0.8;
@@ -58,7 +55,7 @@ input.form-control {
 .create {
     color: white;
     font-size: 20px;
-    padding: 2px 35px 0 35px;
+    padding: 0 35px 0 35px;
 }
 
 .btn-category h3, .btn-date h3  {
@@ -143,7 +140,7 @@ input.form-control {
 .archive .row .col-11 .row .col-6 {
     padding: 0;
 }
-.archive .row .col-6 h3 {
+.archive .row .col-6 h3, .archive .row .col-6 .circle {
     width: 130px;
     height: 130px !important;
     border-radius: 50%;
@@ -164,10 +161,9 @@ input.form-control {
 .archive .row .col-6 h3#other{
     background-color: #E49400;
 }
-.archive .row .col-6 h3#financial{
-    background-color: #27DCDA;
+.archive .row .col-6 h3#add{
+    background-color: #8C2771;
 }
-
 
 .list {
     flex-wrap: nowrap;

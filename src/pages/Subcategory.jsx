@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import back from "../img/back.png";
 import logo from "../img/brain_logo.png";
 
 class Subcategory extends React.Component {
@@ -14,6 +14,9 @@ class Subcategory extends React.Component {
         return(
           <>
             <div className="container">
+            <div className="control">
+              <img src={back} onClick={()=>this.changeView('')} alt="back" />
+          </div>
             <div className="row mb-5">
              <div className="col">
                <img src={logo} height="100" alt="" />
@@ -24,7 +27,7 @@ class Subcategory extends React.Component {
              <div className="col-11">
              {/* {filteredDeadlines.forEach((dl)=>{return <h3>{dl.Subcategory}</h3>})} */}
              {filteredDeadlines.map((value, index) => {
-                return <h3 key={index} onClick={()=>this.changeView('browseSubcategory', value.Category, value.Subcategory)}>{value.Subcategory}</h3>
+                return <h3 key={index} onClick={()=>this.changeView(value.Category==='People'||value.Category==='Animals'?'browseSubcategory_person':'browseSubcategory', value.Category, value.Subcategory)}>{value.Subcategory}</h3>
               })}
               </div>
           </div>

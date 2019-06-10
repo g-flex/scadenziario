@@ -25,7 +25,7 @@ class Category extends React.Component {
         <hr/>
         <p onClick={()=>this.changeView('Deadline', 'PEOPLE')}>PEOPLE</p>
         <hr/>
-        <p onClick={()=>this.changeView('Deadline', 'OTHER')}>OTHER</p>
+        <p onClick={()=>this.changeView('subcategory_other', 'OTHER', 'OTHER')}>OTHER</p>
         
     </div>
           </div>
