@@ -10,6 +10,7 @@ class Login extends React.Component {
   constructor() {
 		super();
     this.clickSubmit = this.clickSubmit.bind(this);
+    this.checkDeadlines = this.checkDeadlines.bind(this);
   }
   
   getAuthPost(email, password, callback) {
@@ -19,7 +20,7 @@ class Login extends React.Component {
     };
     
     const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
-    fetch('http://node.mohole.it:1339/auth/local', {
+    fetch('https://nodedue.mohole.it/auth/local', {
       method: 'POST',
       body: formBody,
       headers: {
@@ -29,8 +30,8 @@ class Login extends React.Component {
     .then(response => response.json())
     .then((response) => {
       callback(response);
-    });
-    //.catch(error=> console.error('Error:', error));
+    })
+    .catch(()=> alert('Error: please retry.'));
   }
 
 clickSubmit(event){
@@ -45,21 +46,60 @@ clickSubmit(event){
         //console.log('resp: ', response);
         //let authToken = response.jwt;
         //let username = response.user.username;
-        this.setState({ 
-          redirect: true,
-          username: response.user.username,
-          authToken: response.jwt
-         });
+        localStorage.setItem('authToken', response.jwt);
+        localStorage.setItem('username', response.user.username);
+        localStorage.setItem('userId', response.user.id);
         
+         this.checkDeadlines(response.user.id, response.jwt, (resp)=>{
+            //console.log('resp: ', resp);
+            this.setState({
+              redirect: resp[0]?'hasDeadlines':'noDeadlines',
+              username: response.user.username,
+              authToken: response.jwt,
+              userId: response.user.id,
+              deadlines: resp
+             });
+        });
       });
     }
 }
 
-  render() {
-    const { redirect, username } = this.state;
+checkDeadlines(user_id, token, callback) {
+  fetch('https://nodedue.mohole.it/deadlines?user_id='+user_id, {
+    method: 'GET',
+    headers: {
+      "Content-type": "application/x-www-form-urlencoded;charset=UTF-8",
+  'Authorization': 'Bearer ' + token,
+    }
+  })
+  .then(response => response.json())
+  .then((response) => {
+    callback(response);
+  })
+  .catch(()=> alert('Error: please retry.'));
+}
 
-     if (redirect) {
-       return <Redirect to={`/welcome/${username}`} />;
+  render() {
+    const { redirect, authToken, userId, deadlines } = this.state;
+    
+     if (redirect === 'hasDeadlines') {
+      // to={`/welcome/${username}`}
+        return <Redirect to={{
+          pathname: `/archive`,
+          state: { 
+            id: `${userId}`,
+            token: `${authToken}`,
+            deadlines: deadlines
+         }
+        }} />;
+     } else if (redirect === 'noDeadlines'){
+      return <Redirect to={{
+        pathname: `/add`,
+        state: { 
+          id: `${userId}`,
+          token: `${authToken}`
+       }
+      }} />;
      } else {
       return(
         <>
@@ -82,7 +122,7 @@ clickSubmit(event){
                   <div><small>or</small></div>
                   
                 </form>
-                <div><button className="btn btn-primary"><Link to="/register">Create account</Link></button></div>
+                <div><Link to="/register"><button className="btn btn-primary">Create account</button></Link></div>
               </div>
             </div>
         </>

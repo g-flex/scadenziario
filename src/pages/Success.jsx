@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import tick from "../img/tick.png";
 
 
@@ -10,10 +9,10 @@ class Success extends React.Component {
           <div className="container bcg">
 
           <div className="circle">
-          <img src={tick} className="tick" alt="" />
+          <img src={tick} className="tick" alt="success" />
              </div>
 
-            <p>La tua scadenza è stata salvata</p>
+            <p>Your deadline has been saved.</p>
 
          
                 </div>
