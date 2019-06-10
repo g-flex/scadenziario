@@ -29,6 +29,10 @@ class Edit_person extends React.Component {
         <h6>Issuing / Last vacination</h6>
         <hr />
         <h3 className="mb-5"><input type="date" className="ml-5"/></h3>
+
+        <h6>Days Left</h6>
+        <hr />
+        <h3 className="mb-5">DD/MM/YYYY</h3>
     </div>
 
 

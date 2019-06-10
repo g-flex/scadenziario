@@ -29,6 +29,10 @@ class Edit extends React.Component {
         <h6>Choose the time</h6>
         <hr />
         <h3 className="mb-5"><input type="number"/></h3>
+
+        <h6>Days Left</h6>
+        <hr />
+        <h3 className="mb-5">DD/MM/YYYY</h3>
     </div>
 
 
