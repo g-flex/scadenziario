@@ -19,6 +19,12 @@ class Add_deadline extends React.Component {
            <div class="circle">
            <img src={plus} className="tick"/>
             </div>
+            </div>
+            </div>
+            </div>
+            </>
+            )}
+            }
 
 class Add_deadline extends React.Component {
     constructor(props) {
