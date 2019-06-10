@@ -14,6 +14,9 @@ import Subcategory_other from "./pages/Subcategory_other";
 import Subcategory_home from "./pages/Subcategory_home";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Splashpage from "./pages/Splashpage";
+import Add_deadline from "./pages/Add_deadline";
+import Edit from "./pages/Edit";
+import Edit_person from "./pages/Edit_person";
 
 function App() {
   return (
@@ -34,6 +37,9 @@ function App() {
         <Route exact path="/subcategory_other" component={Subcategory_other} />
         <Route exact path="/subcategory_home" component={Subcategory_home} />
         <Route exact path="/splashpage" component={Splashpage} />
+        <Route exact path="/add_deadline" component={Add_deadline} />
+        <Route exact path="/edit" component={Edit} />
+        <Route exact path="/edit_person" component={Edit_person} />
     </Router>
   );
 }

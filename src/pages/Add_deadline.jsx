@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import plus from "../img/plus.png";
 
 
-class Success extends React.Component {
+class Add_deadline extends React.Component {
     render() {
       return(
         <>
@@ -28,4 +28,4 @@ class Success extends React.Component {
       );
     }
   }
-  export default Success;
+  export default Add_deadline;
