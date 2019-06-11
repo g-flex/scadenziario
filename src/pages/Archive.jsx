@@ -5,6 +5,7 @@ import Subcategory from "../pages/Subcategory";
 import plus from "../img/plus.png";
 import Edit from "../pages/Edit";
 import Edit_person from "../pages/Edit_person";
+import Success from "../pages/Success";
 import { Redirect } from 'react-router-dom';
 
 class Archive extends React.Component {
@@ -17,11 +18,13 @@ class Archive extends React.Component {
     this.changeView = this.changeView.bind(this);
   }
 
-  changeView(newPhase, selectedCategory='', subcategory=''){
+  changeView(newPhase, selectedCategory='', subcategory='', values='', deadlines=''){
     this.setState({ 
       addPhase: newPhase,
       selectedCategory: selectedCategory,
-      subcategory: subcategory
+      subcategory: subcategory,
+      values: values,
+      valueList: deadlines
     })
   }
 
@@ -71,11 +74,11 @@ class Archive extends React.Component {
           );
         } else if(this.state.addPhase==='browseSubcategory'){
           return(
-            <Edit />
+            <Edit values={this.state.values} subcategory={this.state.subcategory} category={this.state.selectedCategory} valueList={this.state.valueList} changeView={this.changeView} />
           );
         } else if(this.state.addPhase==='browseSubcategory_person'){
           return(
-            <Edit_person />
+            <Edit_person values={this.state.values} subcategory={this.state.subcategory} category={this.state.selectedCategory} valueList={this.state.valueList} changeView={this.changeView} />
           );
         } else if(this.state.addPhase==='add'){
           return <Redirect to={{
@@ -85,6 +88,8 @@ class Archive extends React.Component {
               token: localStorage.getItem('authToken')
            }
           }} />;
+        } else if(this.state.addPhase==='success'){
+          return <Success />;
         }
       }
     }

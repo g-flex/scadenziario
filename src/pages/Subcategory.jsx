@@ -3,8 +3,8 @@ import back from "../img/back.png";
 import logo from "../img/brain_logo.png";
 
 class Subcategory extends React.Component {
-  changeView = (a,b='',c='') => {
-    this.props.changeView(a,b,c);
+  changeView = (a,b='',c='',d='',e='') => {
+    this.props.changeView(a,b,c,d,e);
   }
     render() {
       //console.log('this.props: ', this.props);
@@ -19,7 +19,7 @@ class Subcategory extends React.Component {
           </div>
             <div className="row mb-5">
              <div className="col">
-               <img src={logo} height="100" alt="" />
+               <img src={logo} height="100" alt="logo" />
              </div>
           </div>
           <div className="row list">
@@ -27,7 +27,7 @@ class Subcategory extends React.Component {
              <div className="col-11">
              {/* {filteredDeadlines.forEach((dl)=>{return <h3>{dl.Subcategory}</h3>})} */}
              {filteredDeadlines.map((value, index) => {
-                return <h3 key={index} onClick={()=>this.changeView(value.Category==='People'||value.Category==='Animals'?'browseSubcategory_person':'browseSubcategory', value.Category, value.Subcategory)}>{value.Subcategory}</h3>
+                return <h3 key={index} onClick={()=>this.changeView(value.Category==='People'||value.Category==='Animals'?'browseSubcategory_person':'browseSubcategory', value.Category, value.Subcategory, value, this.props.deadlines)}>{value.Subcategory}</h3>
               })}
               </div>
           </div>
@@ -40,7 +40,7 @@ class Subcategory extends React.Component {
             <div className="container">
             <div className="row mb-5">
              <div className="col">
-               <img src={logo} height="100" alt="" />
+               <img src={logo} height="100" alt="logo" />
              </div>
           </div>
           <div className="row list">
