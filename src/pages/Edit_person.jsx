@@ -6,6 +6,7 @@ class Edit_person extends React.Component {
   constructor(props) {
     super(props);
     this.putDeadline = this.putDeadline.bind(this);
+    this.delDeadline = this.delDeadline.bind(this);
     this.submitChange = this.submitChange.bind(this);
   }
   putDeadline(field, value, callback) {
@@ -24,12 +25,28 @@ class Edit_person extends React.Component {
     })
     .catch(error=> console.error('Error:', error));
   }
+
+  delDeadline() {
+    fetch('https://nodedue.mohole.it/deadlines/'+this.props.values.id, {
+      method: 'DELETE',
+      headers: {
+        "Authorization": "Bearer "+localStorage.getItem('authToken'),
+        "Content-type": "application/x-www-form-urlencoded;charset=UTF-8"
+      }
+    })
+    .then(response => response.json())
+    .then((response) => {
+        this.changeView('success');
+    })
+    .catch(error=> console.error('Error:', error));
+  }
+
   submitChange(field, value){
     if(!field || !value || field==='' || value===''){
       alert('Insert a value to edit.');
     } else{
       this.putDeadline(field, value, (response)=>{
-        this.changeView('success');
+        
       });
     }
   }
@@ -85,7 +102,7 @@ class Edit_person extends React.Component {
 
 
         
-<button className="btn btn-1"><h3 className="create">DELETE</h3></button>
+<button className="btn btn-1" onClick={this.delDeadline}><h3 className="create">DELETE</h3></button>
         
           </div>
         </>
