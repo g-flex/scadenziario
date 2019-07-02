@@ -1,1 +1,1 @@
-Deployed @[scadenziario.netlify.com](scadenziario.netlify.com)
+Deployed @[scadenziario.netlify.com](https://scadenziario.netlify.com)
